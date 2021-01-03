@@ -1,0 +1,5 @@
+in:
+  type: hbase
+  table: embulk-input-hbase-test
+out:
+  type: stdout

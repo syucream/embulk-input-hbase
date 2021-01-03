@@ -1,0 +1,5 @@
+create 'embulk-input-hbase-test', 'cf'
+put 'embulk-input-hbase-test', 'row1', 'cf:a', 'value1'
+put 'embulk-input-hbase-test', 'row2', 'cf:b', 'value2'
+put 'embulk-input-hbase-test', 'row3', 'cf:c', 'value3'
+put 'embulk-input-hbase-test', 'row4', 'cf:d', 'value4'

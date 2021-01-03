@@ -1,0 +1,11 @@
+dependencies {
+    compile group: 'org.apache.hbase', name: 'hbase-client', version: '2.1.9'
+}
+
+embulkPlugin {
+    mainClass = "org.embulk.input.hbase.HBaseInputPlugin"
+    category = "input"
+    type = "hbase"
+}
+
+task prepareKotlinBuildScriptModel {}

@@ -1,0 +1,43 @@
+plugins {
+    id 'scala'
+    id 'cz.alenkacz.gradle.scalafmt' version '1.14.0'
+    id "org.embulk.embulk-plugins" version "0.4.2" apply false
+}
+
+allprojects {
+    group = 'org.embulk.input.hbase'
+    version = "0.0.1"
+    description = ""
+}
+
+subprojects {
+    apply plugin: 'scala'
+    apply plugin: 'application'
+    apply plugin: 'cz.alenkacz.gradle.scalafmt'
+    apply plugin: "org.embulk.embulk-plugins"
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    configurations {
+        provided
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        compile 'org.scala-lang:scala-library:2.12.3'
+        compileOnly 'org.embulk:embulk-core:0.9.12'
+    }
+
+    gem {
+        authors = [ 'Ryo Okubo' ]
+        email = [ "syucream1031@gmail.com" ]
+        summary = "HBase input plugin for Embulk"
+        homepage = "https://github.com/embulk/embulk-input-hbase"
+        licenses = [ "Apache-2.0" ]
+    }
+}
